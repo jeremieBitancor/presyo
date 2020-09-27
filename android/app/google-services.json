@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "319304592968",
+    "firebase_url": "https://presyo-eb821.firebaseio.com",
+    "project_id": "presyo-eb821",
+    "storage_bucket": "presyo-eb821.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319304592968:android:cbfa0f0520d9b48e72f27d",
+        "android_client_info": {
+          "package_name": "com.example.presyo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319304592968-5qqno24c47f2r3ta9m7so7up9tc0dqjc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMYDReGoB_i9TBirVd4OPWpewXBgZx_IA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319304592968-5qqno24c47f2r3ta9m7so7up9tc0dqjc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
