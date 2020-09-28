@@ -41,12 +41,20 @@ class _EditProductState extends State<EditProduct> {
             ),
             onPressed: () {
               if (formKey.currentState.validate()) {
+                var newIndexString = [];
+
+                for (int i = 1; i < this.description.length; i++) {
+                  newIndexString
+                      .add(this.description.substring(0, i).toString());
+                }
+
                 var newPrice = ProductPrice(
                     retail: this.retailPrice, wholesale: this.wholesalePrice);
                 var newProduct = Product(
                     sku: widget.product.sku,
                     description: this.description,
-                    price: newPrice);
+                    price: newPrice,
+                    indexString: newIndexString);
 
                 productViewModel.updateProduct(newProduct).then((value) {
                   final snackbar = SnackBar(

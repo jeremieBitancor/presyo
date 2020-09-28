@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:presyo/view/home.dart';
+import 'package:presyo/view/search.dart';
 import 'package:presyo/view_model/product_viewmodel.dart';
 import 'package:presyo/view_model/search_product_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Home(),
+        home: Search(),
       ),
     );
   }

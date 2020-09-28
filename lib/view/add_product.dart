@@ -70,8 +70,19 @@ class _AddProductState extends State<AddProduct> {
           double retailPrice = double.parse(retailPriceController.text);
           double wholesalePrice = double.parse(wholesalePriceController.text);
 
-          var price = ProductPrice(retail: retailPrice, wholesale: wholesalePrice);
-          var product = Product(sku: sku, description: desc, price: price);
+          List<String> indexString = [];
+
+          for (int i = 1; i < desc.length; i++) {
+            indexString.add(desc.substring(0, i).toString());
+          }
+
+          var price =
+              ProductPrice(retail: retailPrice, wholesale: wholesalePrice);
+          var product = Product(
+              sku: sku,
+              description: desc,
+              price: price,
+              indexString: indexString);
 
           productViewModel.addProduct(product).then((value) {
             final snackbar = SnackBar(
