@@ -11,20 +11,21 @@ class ProductViewModel extends ChangeNotifier {
 
   // Future<Product> get products => _products;
 
+  // Stream<List<Product>> _products;
+  // Stream<List<Product>> get products => _products;
+
   Future<void> addProduct(Product product) async {
     var ref = await firebaseFirestore
         .collection('products')
-        .doc(product.sku)
-        .set(jsonDecode(jsonEncode(product)));
+        .add(jsonDecode(jsonEncode(product)));
     return ref;
   }
 
   Stream<List<Product>> getProduct(String searchString) {
-    // var ref = firebaseFirestore
+    // var ref1 = firebaseFirestore
     //     .collection('products')
-    //     .doc(searchString)
-    //     .get()
-    //     .then((value) => Product.fromFirestore(value));
+    //     .where('indexString', arrayContains: searchString)
+    //     .snapshots().map((event) => event.docs.map((e) => Product.fromFirestore(e)).toList());
 
     // _products = ref;
     // notifyListeners();
@@ -35,6 +36,8 @@ class ProductViewModel extends ChangeNotifier {
         .map((event) =>
             event.docs.map((e) => Product.fromFirestore(e)).toList());
 
+    // _products = ref;
+    // notifyListeners();
     return ref;
   }
 
@@ -46,7 +49,9 @@ class ProductViewModel extends ChangeNotifier {
     return ref;
   }
 
-  deleteProduct(String productId) {
-    firebaseFirestore.collection('products').doc(productId).delete();
+  Future<void> deleteProduct(String productId) async {
+    var ref =
+        await firebaseFirestore.collection('products').doc(productId).delete();
+    return ref;
   }
 }

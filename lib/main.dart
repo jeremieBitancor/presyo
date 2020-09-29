@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:presyo/view/add_product.dart';
+import 'package:presyo/view/edit_product.dart';
 import 'package:presyo/view/home.dart';
 import 'package:presyo/view/search.dart';
 import 'package:presyo/view_model/product_viewmodel.dart';
@@ -29,6 +31,11 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+        routes: {
+          '/search': (BuildContext context) => Search(),
+          '/addProduct': (BuildContext context) => AddProduct(),
+          // '/editProduct': (BuildContext context) => EditProduct(product: null)
+        },
         home: Search(),
       ),
     );

@@ -36,34 +36,75 @@ class _AddProductState extends State<AddProduct> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: Text('Add'),
+        title: Text(
+          'Add',
+          style: TextStyle(color: Color(0xFF7F7979)),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        toolbarHeight: 80,
+        iconTheme: IconThemeData(color: Color(0xFF7F7979)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(children: [
-          TextField(
-            controller: skuController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(hintText: "SKU"),
+          Container(
+            padding: EdgeInsets.only(left: 20),
+            margin: EdgeInsets.only(bottom: 6),
+            decoration: BoxDecoration(
+                color: Color(0xFFEEF0F2),
+                borderRadius: BorderRadius.circular(15)),
+            child: TextField(
+              controller: skuController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                hintText: "SKU",
+                border: InputBorder.none,
+              ),
+            ),
           ),
-          TextField(
-            controller: descController,
-            decoration: InputDecoration(hintText: "Description"),
+          Container(
+            padding: EdgeInsets.only(left: 20),
+            margin: EdgeInsets.only(bottom: 6),
+            decoration: BoxDecoration(
+                color: Color(0xFFEEF0F2),
+                borderRadius: BorderRadius.circular(15)),
+            child: TextField(
+              controller: descController,
+              decoration: InputDecoration(
+                  hintText: "Description", border: InputBorder.none),
+            ),
           ),
-          TextField(
-            controller: retailPriceController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(hintText: "Retail price"),
+          Container(
+            padding: EdgeInsets.only(left: 20),
+            margin: EdgeInsets.only(bottom: 6),
+            decoration: BoxDecoration(
+                color: Color(0xFFEEF0F2),
+                borderRadius: BorderRadius.circular(15)),
+            child: TextField(
+              controller: retailPriceController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  hintText: "Retail price", border: InputBorder.none),
+            ),
           ),
-          TextField(
-            controller: wholesalePriceController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(hintText: "Wholesale price"),
+          Container(
+            padding: EdgeInsets.only(left: 20),
+            margin: EdgeInsets.only(bottom: 6),
+            decoration: BoxDecoration(
+                color: Color(0xFFEEF0F2),
+                borderRadius: BorderRadius.circular(15)),
+            child: TextField(
+              controller: wholesalePriceController,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                  hintText: "Wholesale price", border: InputBorder.none),
+            ),
           ),
         ]),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Color(0xFF470FF4),
         onPressed: () {
           String sku = skuController.text;
           String desc = descController.text;
