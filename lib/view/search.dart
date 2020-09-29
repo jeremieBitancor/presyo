@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:presyo/view/add_product.dart';
 import 'package:presyo/view/edit_product.dart';
 import 'package:presyo/view_model/product_viewmodel.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
