@@ -11,8 +11,8 @@ class ProductViewModel extends ChangeNotifier {
 
   // Future<Product> get products => _products;
 
-  // Stream<List<Product>> _products;
-  // Stream<List<Product>> get products => _products;
+  Stream<List<Product>> _products;
+  Stream<List<Product>> get products => _products;
 
   Future<void> addProduct(Product product) async {
     var ref = await firebaseFirestore
@@ -21,14 +21,8 @@ class ProductViewModel extends ChangeNotifier {
     return ref;
   }
 
-  Stream<List<Product>> getProduct(String searchString) {
-    // var ref1 = firebaseFirestore
-    //     .collection('products')
-    //     .where('indexString', arrayContains: searchString)
-    //     .snapshots().map((event) => event.docs.map((e) => Product.fromFirestore(e)).toList());
-
-    // _products = ref;
-    // notifyListeners();
+  // Stream<List<Product>>
+  getProduct(String searchString) {
     var ref = firebaseFirestore
         .collection('products')
         .where('indexString', arrayContains: searchString)
@@ -36,15 +30,28 @@ class ProductViewModel extends ChangeNotifier {
         .map((event) =>
             event.docs.map((e) => Product.fromFirestore(e)).toList());
 
-    // _products = ref;
-    // notifyListeners();
-    return ref;
+    _products = ref;
+    notifyListeners();
+    // return ref;
+  }
+
+  getProductBySKU(String sku) {
+    var ref = firebaseFirestore
+        .collection('products')
+        .where('sku', isEqualTo: sku)
+        .snapshots()
+        .map((event) =>
+            event.docs.map((e) => Product.fromFirestore(e)).toList());
+
+    _products = ref;
+    notifyListeners();
   }
 
   Future<void> updateProduct(Product product) async {
+    // print(product.sku);
     var ref = await firebaseFirestore
         .collection('products')
-        .doc(product.sku)
+        .doc(product.docId)
         .update(jsonDecode(jsonEncode(product)));
     return ref;
   }

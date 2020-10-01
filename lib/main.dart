@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:presyo/view/add_product.dart';
-import 'package:presyo/view/edit_product.dart';
-import 'package:presyo/view/home.dart';
 import 'package:presyo/view/search.dart';
 import 'package:presyo/view_model/product_viewmodel.dart';
 import 'package:presyo/view_model/search_product_viewmodel.dart';
