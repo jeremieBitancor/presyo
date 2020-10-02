@@ -74,10 +74,13 @@ class _AddProductState extends State<AddProduct> {
                     // style: TextStyle(fontSize: 20),
                     controller: skuController,
                     keyboardType: TextInputType.number,
+
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFEEF0F2),
                         hintText: "SKU",
+                        isDense: true,
+                        contentPadding: EdgeInsets.all(15),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(0xFFEEF0F2)),
                           borderRadius: BorderRadius.circular(15),
@@ -117,6 +120,8 @@ class _AddProductState extends State<AddProduct> {
                 decoration: InputDecoration(
                     fillColor: Color(0xFFEEF0F2),
                     filled: true,
+                    isDense: true,
+                    contentPadding: EdgeInsets.all(15),
                     hintText: "Description",
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xFFEEF0F2)),
@@ -144,6 +149,8 @@ class _AddProductState extends State<AddProduct> {
                     filled: true,
                     fillColor: Color(0xFFEEF0F2),
                     hintText: "Retail price",
+                    isDense: true,
+                    contentPadding: EdgeInsets.all(15),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xFFEEF0F2)),
                       borderRadius: BorderRadius.circular(15),
@@ -170,6 +177,8 @@ class _AddProductState extends State<AddProduct> {
                     filled: true,
                     fillColor: Color(0xFFEEF0F2),
                     hintText: "Wholesale price",
+                    isDense: true,
+                    contentPadding: EdgeInsets.all(15),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Color(0xFFEEF0F2)),
                       borderRadius: BorderRadius.circular(15),

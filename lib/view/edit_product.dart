@@ -66,9 +66,12 @@ class _EditProductState extends State<EditProduct> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'SKU',
-                      style: TextStyle(color: Colors.white),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Text(
+                        'SKU',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.only(bottom: 12, top: 6),
@@ -79,6 +82,8 @@ class _EditProductState extends State<EditProduct> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
+                          isDense: true,
+                          contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xFFEEF0F2)),
                             borderRadius: BorderRadius.circular(15),
@@ -95,7 +100,11 @@ class _EditProductState extends State<EditProduct> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Description', style: TextStyle(color: Colors.white)),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text('Description',
+                          style: TextStyle(color: Colors.white)),
+                    ),
                     Container(
                       margin: EdgeInsets.only(bottom: 12, top: 6),
                       child: TextFormField(
@@ -115,6 +124,8 @@ class _EditProductState extends State<EditProduct> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
+                          isDense: true,
+                          contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xFFEEF0F2)),
                             borderRadius: BorderRadius.circular(15),
@@ -131,9 +142,12 @@ class _EditProductState extends State<EditProduct> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Retail price',
-                      style: TextStyle(color: Colors.white),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(
+                        'Retail price',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.only(bottom: 12, top: 6),
@@ -155,6 +169,8 @@ class _EditProductState extends State<EditProduct> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
+                          isDense: true,
+                          contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xFFEEF0F2)),
                             borderRadius: BorderRadius.circular(15),
@@ -171,9 +187,12 @@ class _EditProductState extends State<EditProduct> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Wholesale price',
-                      style: TextStyle(color: Colors.white),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Text(
+                        'Wholesale price',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 6),
@@ -195,8 +214,8 @@ class _EditProductState extends State<EditProduct> {
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
-                          // labelStyle: TextStyle(color: Color(0xFF252422)),
-                          // labelText: "Wholesale price",
+                          isDense: true,
+                          contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Color(0xFFEEF0F2)),
                             borderRadius: BorderRadius.circular(15),

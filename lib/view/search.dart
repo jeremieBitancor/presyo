@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:presyo/view/edit_product.dart';
 import 'package:presyo/view_model/product_viewmodel.dart';
@@ -40,6 +41,7 @@ class _SearchState extends State<Search> {
 
     return Scaffold(
       appBar: AppBar(
+          brightness: Brightness.dark,
           backgroundColor: Colors.transparent,
           elevation: 0,
           toolbarHeight: 80,
@@ -47,6 +49,7 @@ class _SearchState extends State<Search> {
             children: [
               Expanded(
                 child: TextField(
+                  minLines: 1,
                   controller: searchController,
                   cursorColor: Color(0xFF323031),
                   style: TextStyle(color: Color(0xFF000000)),
@@ -56,6 +59,8 @@ class _SearchState extends State<Search> {
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: Color(0xFFEEF0F2),
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(10),
                       prefixIcon: Icon(
                         Icons.search,
                         color: Color(0xFF7F7979),
