@@ -71,7 +71,7 @@ class _AddProductState extends State<AddProduct> {
                 child: Container(
                   margin: EdgeInsets.only(bottom: 6),
                   child: TextFormField(
-                    style: TextStyle(fontSize: 20),
+                    // style: TextStyle(fontSize: 20),
                     controller: skuController,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
@@ -112,7 +112,7 @@ class _AddProductState extends State<AddProduct> {
             Container(
               margin: EdgeInsets.only(bottom: 6),
               child: TextFormField(
-                style: TextStyle(fontSize: 20),
+                // style: TextStyle(fontSize: 20),
                 controller: descController,
                 decoration: InputDecoration(
                     fillColor: Color(0xFFEEF0F2),
@@ -137,7 +137,7 @@ class _AddProductState extends State<AddProduct> {
             Container(
               margin: EdgeInsets.only(bottom: 6),
               child: TextFormField(
-                style: TextStyle(fontSize: 20),
+                // style: TextStyle(fontSize: 20),
                 controller: retailPriceController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
@@ -164,7 +164,7 @@ class _AddProductState extends State<AddProduct> {
               margin: EdgeInsets.only(bottom: 6),
               child: TextFormField(
                 controller: wholesalePriceController,
-                style: TextStyle(fontSize: 20),
+                // style: TextStyle(fontSize: 20),
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                     filled: true,
@@ -232,7 +232,11 @@ class _AddProductState extends State<AddProduct> {
             });
           }
         },
-        child: isLoading ? CircularProgressIndicator() : Icon(Icons.check),
+        child: isLoading
+            ? CircularProgressIndicator(
+                backgroundColor: Colors.white,
+              )
+            : Icon(Icons.check),
       ),
     );
   }

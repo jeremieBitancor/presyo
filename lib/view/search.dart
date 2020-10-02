@@ -49,7 +49,7 @@ class _SearchState extends State<Search> {
                 child: TextField(
                   controller: searchController,
                   cursorColor: Color(0xFF323031),
-                  style: TextStyle(color: Color(0xFF000000), fontSize: 20),
+                  style: TextStyle(color: Color(0xFF000000)),
                   onSubmitted: (value) {
                     productVM.getProduct(value);
                   },

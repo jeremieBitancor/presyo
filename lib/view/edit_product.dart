@@ -75,7 +75,7 @@ class _EditProductState extends State<EditProduct> {
                       child: TextFormField(
                         initialValue: widget.product.sku,
                         readOnly: true,
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -111,7 +111,7 @@ class _EditProductState extends State<EditProduct> {
                           formKey.currentState.save();
                           return null;
                         },
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -151,7 +151,7 @@ class _EditProductState extends State<EditProduct> {
                           return null;
                         },
                         keyboardType: TextInputType.number,
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -191,7 +191,7 @@ class _EditProductState extends State<EditProduct> {
                           wholesalePrice = double.parse(value);
                         },
                         keyboardType: TextInputType.number,
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -250,7 +250,7 @@ class _EditProductState extends State<EditProduct> {
           }
         },
         child: isLoading
-            ? CircularProgressIndicator(backgroundColor: Colors.white)
+            ? CircularProgressIndicator(backgroundColor: Color(0xFF470FF4))
             : Icon(
                 Icons.edit,
                 color: Color(0xFF470FF4),
