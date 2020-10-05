@@ -52,6 +52,7 @@ class _AddProductState extends State<AddProduct> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
+        brightness: Brightness.light,
         title: Text(
           'Add',
           style: TextStyle(color: Color(0xFF7F7979)),

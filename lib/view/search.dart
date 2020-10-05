@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:presyo/view/edit_product.dart';
 import 'package:presyo/view_model/product_viewmodel.dart';
@@ -41,7 +40,7 @@ class _SearchState extends State<Search> {
 
     return Scaffold(
       appBar: AppBar(
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           backgroundColor: Colors.transparent,
           elevation: 0,
           toolbarHeight: 80,

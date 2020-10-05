@@ -55,7 +55,8 @@ class _EditProductState extends State<EditProduct> {
             gradient: LinearGradient(
                 colors: [Color(0xFF0496FF), Color(0xFF470FF4)],
                 begin: Alignment.topCenter,
-                end: Alignment.bottomCenter)),
+                end: Alignment.bottomCenter)
+                ),
         padding: EdgeInsets.all(20),
         child: Form(
           key: formKey,
