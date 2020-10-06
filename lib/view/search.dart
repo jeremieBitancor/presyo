@@ -30,7 +30,6 @@ class _SearchState extends State<Search> {
   }
 
   searchValue() {
-    // searchString = searchController.text;
     setState(() {});
   }
 
@@ -40,52 +39,32 @@ class _SearchState extends State<Search> {
 
     return Scaffold(
       appBar: AppBar(
-          brightness: Brightness.light,
-          backgroundColor: Colors.transparent,
           elevation: 0,
-          toolbarHeight: 80,
           title: Row(
             children: [
               Expanded(
                 child: TextField(
                   minLines: 1,
                   controller: searchController,
-                  cursorColor: Color(0xFF323031),
-                  style: TextStyle(color: Color(0xFF000000)),
+                  cursorColor: Colors.white,
+                  style: TextStyle(color: Colors.white),
                   onSubmitted: (value) {
                     productVM.getProduct(value);
                   },
                   decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color(0xFFF1EEE5),
+                      fillColor: Colors.blue[800],
                       isDense: true,
                       contentPadding: EdgeInsets.all(10),
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: Color(0xFF7F7979),
-                        size: 20,
-                      ),
-                      suffixIcon: searchController.text != ''
-                          ? IconButton(
-                              icon: Icon(
-                                Icons.clear,
-                                size: 20,
-                              ),
-                              color: Color(0xFF7F7979),
-                              onPressed: () {
-                                searchController.clear();
-                              },
-                            )
-                          : null,
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                        borderSide: BorderSide(color: Colors.transparent),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                          borderSide: BorderSide(color: Colors.transparent),
                           borderRadius: BorderRadius.circular(15)),
                       hintText: "Search",
-                      hintStyle: TextStyle(color: Color(0xFF7F7979))),
+                      hintStyle: TextStyle(color: Colors.white)),
                 ),
               ),
               Container(
@@ -99,9 +78,7 @@ class _SearchState extends State<Search> {
                   },
                   icon: FaIcon(
                     FontAwesomeIcons.camera,
-                    size: 32,
                   ),
-                  color: Color(0xFF819C4B),
                 ),
               )
             ],
@@ -109,11 +86,9 @@ class _SearchState extends State<Search> {
       body: Container(
         padding: EdgeInsets.only(top: 10),
         child: StreamBuilder(
-          // initialData: [null],
           stream: productVM.products,
           builder: (context, snapshot) {
             print(snapshot);
-            // print(searchController.text);
             if (snapshot.hasError) {
               return Text('Error');
             } else {
@@ -146,8 +121,6 @@ class _SearchState extends State<Search> {
                   break;
 
                 case ConnectionState.active:
-                  // print(snapshot.data.length);
-
                   if (snapshot.data.length == 0) {
                     return Container(
                       child: Center(
@@ -178,14 +151,14 @@ class _SearchState extends State<Search> {
                             width: double.infinity,
                             height: 150,
                             decoration: BoxDecoration(
-                                color: Color(0xFFF1EEE5),
-                                // gradient: LinearGradient(
-                                //     colors: [
-                                //       Color(0xFF0496FF),
-                                //       Color(0xFF470FF4),
-                                //     ],
-                                //     end: Alignment.bottomCenter,
-                                //     begin: Alignment.topCenter),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      offset: Offset(1, 1),
+                                      spreadRadius: 1,
+                                      blurRadius: 1),
+                                ],
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(10)),
                             child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,7 +172,6 @@ class _SearchState extends State<Search> {
                                           fontWeight: FontWeight.w400)),
                                   Text(
                                     snapshot.data[index].description.toString(),
-                                    // .toUpperCase(),
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.w600,
@@ -261,7 +233,7 @@ class _SearchState extends State<Search> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          backgroundColor: Color(0xFF819C4B),
+          backgroundColor: Colors.blue[900],
           onPressed: () {
             Navigator.of(context).pushNamed('/addProduct');
           },

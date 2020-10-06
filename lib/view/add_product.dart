@@ -52,17 +52,12 @@ class _AddProductState extends State<AddProduct> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        brightness: Brightness.light,
         title: Text(
           'Add',
-          style: TextStyle(color: Color(0xFF323B20)),
         ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        toolbarHeight: 80,
-        iconTheme: IconThemeData(color: Color(0xFF323B20)),
       ),
-      body: Padding(
+      body: Container(
+        margin: const EdgeInsets.only(top: 30),
         padding: const EdgeInsets.all(10.0),
         child: Form(
           key: formKey,
@@ -72,22 +67,19 @@ class _AddProductState extends State<AddProduct> {
                 child: Container(
                   margin: EdgeInsets.only(bottom: 6),
                   child: TextFormField(
-                    // style: TextStyle(fontSize: 20),
                     controller: skuController,
                     keyboardType: TextInputType.number,
-
                     decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color(0xFFF1EEE5),
                         hintText: "SKU",
                         isDense: true,
                         contentPadding: EdgeInsets.all(15),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                          borderSide: BorderSide(color: Colors.transparent),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15))),
                     validator: (value) {
                       if (value.isEmpty) {
@@ -101,36 +93,30 @@ class _AddProductState extends State<AddProduct> {
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 6, left: 6),
-                // decoration: BoxDecoration(
-                //     color: Color(0xFF819C4B),
-                //     borderRadius: BorderRadius.circular(15)),
                 child: IconButton(
                   onPressed: scan,
                   icon: FaIcon(
                     FontAwesomeIcons.camera,
-                    size: 32,
                   ),
-                  color: Color(0xFF819C4B),
+                  color: Colors.blue[900],
                 ),
               )
             ]),
             Container(
               margin: EdgeInsets.only(bottom: 6),
               child: TextFormField(
-                // style: TextStyle(fontSize: 20),
                 controller: descController,
                 decoration: InputDecoration(
-                    fillColor: Color(0xFFF1EEE5),
                     filled: true,
                     isDense: true,
                     contentPadding: EdgeInsets.all(15),
                     hintText: "Description",
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                      borderSide: BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                        borderSide: BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(15))),
                 validator: (value) {
                   if (value.isEmpty) {
@@ -144,21 +130,19 @@ class _AddProductState extends State<AddProduct> {
             Container(
               margin: EdgeInsets.only(bottom: 6),
               child: TextFormField(
-                // style: TextStyle(fontSize: 20),
                 controller: retailPriceController,
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 decoration: InputDecoration(
                     filled: true,
-                    fillColor: Color(0xFFF1EEE5),
                     hintText: "Retail price",
                     isDense: true,
                     contentPadding: EdgeInsets.all(15),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                      borderSide: BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                        borderSide: BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(15))),
                 validator: (value) {
                   if (value.isEmpty) {
@@ -173,20 +157,18 @@ class _AddProductState extends State<AddProduct> {
               margin: EdgeInsets.only(bottom: 6),
               child: TextFormField(
                 controller: wholesalePriceController,
-                // style: TextStyle(fontSize: 20),
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 decoration: InputDecoration(
                     filled: true,
-                    fillColor: Color(0xFFF1EEE5),
                     hintText: "Wholesale price",
                     isDense: true,
                     contentPadding: EdgeInsets.all(15),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                      borderSide: BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                        borderSide: BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(15))),
                 validator: (value) {
                   if (value.isEmpty) {
@@ -201,7 +183,7 @@ class _AddProductState extends State<AddProduct> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF819C4B),
+        backgroundColor: Colors.blue[900],
         onPressed: () {
           if (formKey.currentState.validate()) {
             String sku = skuController.text;
@@ -245,7 +227,7 @@ class _AddProductState extends State<AddProduct> {
         },
         child: isLoading
             ? CircularProgressIndicator(
-                backgroundColor: Colors.white,
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
               )
             : Icon(Icons.check),
       ),

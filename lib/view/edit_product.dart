@@ -31,19 +31,12 @@ class _EditProductState extends State<EditProduct> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        brightness: Brightness.light,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        // toolbarHeight: 80,
-        iconTheme: IconThemeData(color: Color(0xFF323B20)),
         title: Text(
           'Edit',
-          style: TextStyle(color: Color(0xFF323B20)),
         ),
         actions: [
           IconButton(
             icon: Icon(Icons.delete),
-            color: Color(0xFF819C4B),
             onPressed: () {
               deleteProductDialog(context, widget.product);
             },
@@ -77,15 +70,14 @@ class _EditProductState extends State<EditProduct> {
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color(0xFFF1EEE5),
                           isDense: true,
                           contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
@@ -119,15 +111,14 @@ class _EditProductState extends State<EditProduct> {
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color(0xFFF1EEE5),
                           isDense: true,
                           contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
@@ -165,15 +156,14 @@ class _EditProductState extends State<EditProduct> {
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color(0xFFF1EEE5),
                           isDense: true,
                           contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
@@ -211,15 +201,14 @@ class _EditProductState extends State<EditProduct> {
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color(0xFFF1EEE5),
                           isDense: true,
                           contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
+                            borderSide: BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
@@ -233,7 +222,7 @@ class _EditProductState extends State<EditProduct> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF819C4B),
+        backgroundColor: Colors.blue[900],
         onPressed: () {
           if (formKey.currentState.validate()) {
             List<String> newIndexString = [];
@@ -267,7 +256,9 @@ class _EditProductState extends State<EditProduct> {
           }
         },
         child: isLoading
-            ? CircularProgressIndicator(backgroundColor: Colors.white)
+            ? CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              )
             : Icon(
                 Icons.edit,
               ),
