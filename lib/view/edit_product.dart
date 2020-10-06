@@ -31,18 +31,19 @@ class _EditProductState extends State<EditProduct> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFF0496FF),
+        brightness: Brightness.light,
+        backgroundColor: Colors.transparent,
         elevation: 0,
-        toolbarHeight: 80,
-        iconTheme: IconThemeData(color: Colors.white),
+        // toolbarHeight: 80,
+        iconTheme: IconThemeData(color: Color(0xFF323B20)),
         title: Text(
           'Edit',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Color(0xFF323B20)),
         ),
         actions: [
           IconButton(
             icon: Icon(Icons.delete),
-            color: Colors.white,
+            color: Color(0xFF819C4B),
             onPressed: () {
               deleteProductDialog(context, widget.product);
             },
@@ -51,12 +52,6 @@ class _EditProductState extends State<EditProduct> {
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Color(0xFF0496FF), Color(0xFF470FF4)],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter)
-                ),
         padding: EdgeInsets.all(20),
         child: Form(
           key: formKey,
@@ -71,7 +66,7 @@ class _EditProductState extends State<EditProduct> {
                       padding: const EdgeInsets.only(left: 8),
                       child: Text(
                         'SKU',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Color(0xFF323B20)),
                       ),
                     ),
                     Container(
@@ -82,15 +77,15 @@ class _EditProductState extends State<EditProduct> {
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: Color(0xFFF1EEE5),
                           isDense: true,
                           contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFEEF0F2)),
+                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
@@ -104,7 +99,7 @@ class _EditProductState extends State<EditProduct> {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text('Description',
-                          style: TextStyle(color: Colors.white)),
+                          style: TextStyle(color: Color(0xFF323B20))),
                     ),
                     Container(
                       margin: EdgeInsets.only(bottom: 12, top: 6),
@@ -124,15 +119,15 @@ class _EditProductState extends State<EditProduct> {
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: Color(0xFFF1EEE5),
                           isDense: true,
                           contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFEEF0F2)),
+                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
@@ -147,7 +142,7 @@ class _EditProductState extends State<EditProduct> {
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         'Retail price',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Color(0xFF323B20)),
                       ),
                     ),
                     Container(
@@ -165,19 +160,20 @@ class _EditProductState extends State<EditProduct> {
                           formKey.currentState.save();
                           return null;
                         },
-                        keyboardType: TextInputType.number,
+                        keyboardType:
+                            TextInputType.numberWithOptions(decimal: true),
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: Color(0xFFF1EEE5),
                           isDense: true,
                           contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFEEF0F2)),
+                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
@@ -192,7 +188,7 @@ class _EditProductState extends State<EditProduct> {
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
                         'Wholesale price',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Color(0xFF323B20)),
                       ),
                     ),
                     Container(
@@ -210,19 +206,20 @@ class _EditProductState extends State<EditProduct> {
                         onSaved: (value) {
                           wholesalePrice = double.parse(value);
                         },
-                        keyboardType: TextInputType.number,
+                        keyboardType:
+                            TextInputType.numberWithOptions(decimal: true),
                         style: TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: Color(0xFFF1EEE5),
                           isDense: true,
                           contentPadding: EdgeInsets.all(15),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFEEF0F2)),
+                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                             borderRadius: BorderRadius.circular(15),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                             borderRadius: BorderRadius.circular(15),
                           ),
                         ),
@@ -236,7 +233,7 @@ class _EditProductState extends State<EditProduct> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFFEEF0F2),
+        backgroundColor: Color(0xFF819C4B),
         onPressed: () {
           if (formKey.currentState.validate()) {
             List<String> newIndexString = [];
@@ -270,10 +267,9 @@ class _EditProductState extends State<EditProduct> {
           }
         },
         child: isLoading
-            ? CircularProgressIndicator(backgroundColor: Color(0xFF470FF4))
+            ? CircularProgressIndicator(backgroundColor: Colors.white)
             : Icon(
                 Icons.edit,
-                color: Color(0xFF470FF4),
               ),
       ),
     );

@@ -57,7 +57,7 @@ class _SearchState extends State<Search> {
                   },
                   decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color(0xFFEEF0F2),
+                      fillColor: Color(0xFFF1EEE5),
                       isDense: true,
                       contentPadding: EdgeInsets.all(10),
                       prefixIcon: Icon(
@@ -78,11 +78,11 @@ class _SearchState extends State<Search> {
                             )
                           : null,
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Color(0xFFEEF0F2)),
+                        borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFEEF0F2)),
+                          borderSide: BorderSide(color: Color(0xFFF1EEE5)),
                           borderRadius: BorderRadius.circular(15)),
                       hintText: "Search",
                       hintStyle: TextStyle(color: Color(0xFF7F7979))),
@@ -90,9 +90,6 @@ class _SearchState extends State<Search> {
               ),
               Container(
                 margin: EdgeInsets.only(left: 10),
-                decoration: BoxDecoration(
-                    color: Color(0xFF470FF4),
-                    borderRadius: BorderRadius.circular(10)),
                 child: IconButton(
                   onPressed: () async {
                     var result = await BarcodeScanner.scan();
@@ -102,8 +99,9 @@ class _SearchState extends State<Search> {
                   },
                   icon: FaIcon(
                     FontAwesomeIcons.camera,
+                    size: 32,
                   ),
-                  color: Colors.white,
+                  color: Color(0xFF819C4B),
                 ),
               )
             ],
@@ -180,13 +178,14 @@ class _SearchState extends State<Search> {
                             width: double.infinity,
                             height: 150,
                             decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                    colors: [
-                                      Color(0xFF0496FF),
-                                      Color(0xFF470FF4),
-                                    ],
-                                    end: Alignment.bottomCenter,
-                                    begin: Alignment.topCenter),
+                                color: Color(0xFFF1EEE5),
+                                // gradient: LinearGradient(
+                                //     colors: [
+                                //       Color(0xFF0496FF),
+                                //       Color(0xFF470FF4),
+                                //     ],
+                                //     end: Alignment.bottomCenter,
+                                //     begin: Alignment.topCenter),
                                 borderRadius: BorderRadius.circular(10)),
                             child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -196,7 +195,7 @@ class _SearchState extends State<Search> {
                                   Text(snapshot.data[index].sku,
                                       style: TextStyle(
                                           fontSize: 20,
-                                          color: Colors.white,
+                                          color: Color(0xFF323B20),
                                           fontWeight: FontWeight.w400)),
                                   Text(
                                     snapshot.data[index].description.toString(),
@@ -204,7 +203,7 @@ class _SearchState extends State<Search> {
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.white),
+                                        color: Color(0xFF323B20)),
                                   ),
                                   Row(
                                     mainAxisAlignment:
@@ -217,14 +216,14 @@ class _SearchState extends State<Search> {
                                             Text(
                                               'Retail price',
                                               style: TextStyle(
-                                                  color: Colors.white),
+                                                  color: Color(0xFF323B20)),
                                             ),
                                             Text(
                                               snapshot.data[index].price.retail
                                                   .toString(),
                                               style: TextStyle(
                                                   fontSize: 20,
-                                                  color: Colors.white),
+                                                  color: Color(0xFF323B20)),
                                             )
                                           ]),
                                       Column(
@@ -234,7 +233,7 @@ class _SearchState extends State<Search> {
                                             Text(
                                               'Wholesale price',
                                               style: TextStyle(
-                                                  color: Colors.white),
+                                                  color: Color(0xFF323B20)),
                                             ),
                                             Text(
                                                 snapshot
@@ -242,7 +241,7 @@ class _SearchState extends State<Search> {
                                                     .toString(),
                                                 style: TextStyle(
                                                     fontSize: 20,
-                                                    color: Colors.white))
+                                                    color: Color(0xFF323B20)))
                                           ])
                                     ],
                                   )
@@ -262,7 +261,7 @@ class _SearchState extends State<Search> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          backgroundColor: Color(0xFF470FF4),
+          backgroundColor: Color(0xFF819C4B),
           onPressed: () {
             Navigator.of(context).pushNamed('/addProduct');
           },
