@@ -29,12 +29,13 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+        initialRoute: '/search',
         routes: {
           '/search': (BuildContext context) => Search(),
           '/addProduct': (BuildContext context) => AddProduct(),
           // '/editProduct': (BuildContext context) => EditProduct(product: null)
         },
-        home: Search(),
+        // home: Search(),
       ),
     );
   }
